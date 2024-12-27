@@ -10,6 +10,7 @@ export class FixRatioContainer extends Container {
     private _width: number
     private _height: number
 
+    // @ts-expect-error
     get width() {
         return this._width * this.scale.x
     }
@@ -17,6 +18,8 @@ export class FixRatioContainer extends Container {
         const p = v / this._width
         this.scale.set(p, p)
     }
+
+    // @ts-expect-error
     get height() {
         return this._height * this.scale.x
     }
